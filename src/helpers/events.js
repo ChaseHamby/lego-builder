@@ -69,4 +69,22 @@ const displayLegs = () => {
     });
 };
 
+// Random Button Functionality //
+
+const randomLego = () => {
+  displayHeads();
+  displayTorsos();
+  displayLegs();
+};
+
+const randomName = () => {
+  const string = '';
+  $('#name').html(string);
+};
+
+$('#random').click(() => {
+  randomName();
+  randomLego();
+});
+
 export default { displayHeads, displayTorsos, displayLegs };
