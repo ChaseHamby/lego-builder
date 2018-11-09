@@ -8,7 +8,7 @@ const randomHeadView = (heads) => {
   let newString = '';
   const randomize = Math.floor(Math.random() * heads.length);
   newString += `
-      <div class="head" id="${heads[randomize].id}"><img src="${heads[randomize].imageUrl}"></div>
+      <div class="heads" id="${heads[randomize].id}"><img src="${heads[randomize].imageUrl}"></div>
     `;
   $('#headCheese').html(newString);
   $('#name').append(heads[randomize].name);
@@ -39,7 +39,7 @@ const randomTorsoView = (torsos) => {
 const displayTorsos = () => {
   partsData.getTorsoData()
     .then((torsos) => {
-      legoView.writeHeads(torsos.data);
+      legoView.writeTorsos(torsos.data);
       randomTorsoView(torsos.data);
     })
     .catch((error) => {
