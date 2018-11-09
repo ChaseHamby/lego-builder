@@ -1,40 +1,29 @@
 import $ from 'jquery';
 import partsView from '../../data/partsData';
+import './legoCharacter.scss';
 
 const writeHeads = (arrayOfHeads) => {
   let domString = '';
   arrayOfHeads.forEach((head) => {
-    domString += `<div id='${head.id}' class='card col-3 p-3 m-5'>
-        <img class='card-img-top border border-dark' src=${head.imageUrl}
-        <div class="card-body">
-            <h5 class="card-title">${head.name}</h5>=
-        </div>`;
+    domString += `<a class="dropdown-item" type="${head.id}"><img src="${head.imageUrl}"><p>${head.name}</p></a>`;
   });
-  $('#head').html(domString);
+  $('#headBlock').html(domString);
 };
 
 const writeTorsos = (arrayOfTorsos) => {
   let domString = '';
   arrayOfTorsos.forEach((torso) => {
-    domString += `<div id='${torso.id}' class='card col-3 p-3 m-5'>
-        <img class='card-img-top border border-dark' src=${torso.imageUrl}
-        <div class="card-body">
-            <h5 class="card-title">${torso.name}</h5>=
-        </div>`;
+    domString += `<a class="dropdown-item" type="${torso.id}"><img src="${torso.imageUrl}"><p>${torso.name}</p></a>`;
   });
-  $('#torso').html(domString);
+  $('#torsoBlock').html(domString);
 };
 
 const writeLegs = (arrayOfLegs) => {
   let domString = '';
   arrayOfLegs.forEach((leg) => {
-    domString += `<div id='${leg.id}' class='card col-3 p-3 m-5'>
-        <img class='card-img-top border border-dark' src=${leg.imageUrl}
-        <div class="card-body">
-            <h5 class="card-title">${leg.name}</h5>=
-        </div>`;
+    domString += `<a class="dropdown-item" type="${leg.id}"><img src="${leg.imageUrl}"><p>${leg.name}</p></a>`;
   });
-  $('#leg').html(domString);
+  $('#legBlock').html(domString);
 };
 
 const initializeHeadView = () => {
@@ -73,4 +62,6 @@ const initializeLegoView = () => {
   initializeLegView();
 };
 
-export default { initializeLegoView };
+export default {
+  initializeLegoView, writeHeads, writeTorsos, writeLegs,
+};

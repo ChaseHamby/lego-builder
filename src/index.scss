@@ -3,3 +3,13 @@
 body {
   background-color: aqua;
 }
+
+#headcheese, #name, #torsoArea, #legsArea {
+  display: flex;
+  justify-content: center; 
+  
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
