@@ -8,7 +8,7 @@ const displaySavedCharacter = (parts) => {
     newString += `
       <div class="col-sm-2">
         <div class="saved-character" style="width: 18rem">
-          <p class="placeholder">${part.savedName}</p>
+          <h3 class="placeholder">${part.savedName}</h3>
           <div class="placeholder">
             <img class="card-img" src="${part.savedHead}">
           </div>

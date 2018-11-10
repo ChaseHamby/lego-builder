@@ -62,6 +62,8 @@ const initializeLegoView = () => {
   initializeLegView();
 };
 
+// Selecting Lego Parts //
+
 const customWriteHeads = (head) => {
   let newString = '';
   newString += `
