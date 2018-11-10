@@ -87,6 +87,4 @@ $('#random').click(() => {
   randomLego();
 });
 
-//  Save Button Functionality //
-
 export default { displayHeads, displayTorsos, displayLegs };
