@@ -1,10 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
-body {
-  background-color: aqua;
-}
-
-#headcheese, #name, #torsoArea, #legsArea {
+#headcheese, #name, #torsoArea, #legsArea, #saved-lego {
   display: flex;
   justify-content: center; 
   
