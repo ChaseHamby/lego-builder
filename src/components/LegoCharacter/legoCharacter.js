@@ -5,7 +5,7 @@ import './legoCharacter.scss';
 const writeHeads = (arrayOfHeads) => {
   let domString = '';
   arrayOfHeads.forEach((head) => {
-    domString += `<a class="dropdown-item" type="${head.id}"><img src="${head.imageUrl}"><p>${head.name}</p></a>`;
+    domString += `<a class="dropdown-item" type="${head.id}"><img src="${head.imageUrl}"><h3>${head.name}</h3></a>`;
   });
   $('#headBlock').html(domString);
 };
@@ -13,7 +13,7 @@ const writeHeads = (arrayOfHeads) => {
 const writeTorsos = (arrayOfTorsos) => {
   let domString = '';
   arrayOfTorsos.forEach((torso) => {
-    domString += `<a class="dropdown-item" type="${torso.id}"><img src="${torso.imageUrl}"><p>${torso.name}</p></a>`;
+    domString += `<a class="dropdown-item" type="${torso.id}"><img src="${torso.imageUrl}"><h3>${torso.name}</h3></a>`;
   });
   $('#torsoBlock').html(domString);
 };
@@ -21,7 +21,7 @@ const writeTorsos = (arrayOfTorsos) => {
 const writeLegs = (arrayOfLegs) => {
   let domString = '';
   arrayOfLegs.forEach((leg) => {
-    domString += `<a class="dropdown-item" type="${leg.id}"><img src="${leg.imageUrl}"><p>${leg.name}</p></a>`;
+    domString += `<a class="dropdown-item" type="${leg.id}"><img src="${leg.imageUrl}"><h3>${leg.name}</h3></a>`;
   });
   $('#legBlock').html(domString);
 };

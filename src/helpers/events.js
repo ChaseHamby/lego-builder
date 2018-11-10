@@ -11,7 +11,7 @@ const randomHeadView = (heads) => {
       <div class="heads" id="${heads[randomize].id}"><img src="${heads[randomize].imageUrl}"></div>
     `;
   $('#headCheese').html(newString);
-  $('#name').append(heads[randomize].name);
+  $('#name').append(`<h3>${heads[randomize].name}</h3>`);
 };
 
 const displayHeads = () => {
@@ -33,7 +33,7 @@ const randomTorsoView = (torsos) => {
       <div class="torso" id="${torsos[randomize].id}"><img src="${torsos[randomize].imageUrl}"></div>
     `;
   $('#torsoArea').html(newString);
-  $('#name').append(torsos[randomize].name);
+  $('#name').append(`<h3>${torsos[randomize].name}</h3>`);
 };
 
 const displayTorsos = () => {
@@ -55,7 +55,7 @@ const randomLegsView = (legs) => {
       <div class="legs" id="${legs[randomize].id}"><img src="${legs[randomize].imageUrl}"></div>
     `;
   $('#legsArea').html(newString);
-  $('#name').append(legs[randomize].name);
+  $('#name').append(`<h3>${legs[randomize].name}</h3>`);
 };
 
 const displayLegs = () => {
@@ -86,5 +86,7 @@ $('#random').click(() => {
   randomName();
   randomLego();
 });
+
+//  Save Button Functionality //
 
 export default { displayHeads, displayTorsos, displayLegs };
