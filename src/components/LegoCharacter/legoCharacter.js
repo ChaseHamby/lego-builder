@@ -62,6 +62,36 @@ const initializeLegoView = () => {
   initializeLegView();
 };
 
+const customWriteHeads = (head) => {
+  let newString = '';
+  newString += `
+      <div class="head" id="${head.id}"><img src="${head.imageUrl}"></div>
+  `;
+  $('#headCheese').html(newString);
+  $('#name').html(`<h3>${head.name}</h3>`);
+};
+
+const selectedHead = (clickedHead) => {
+  partsView.getHeadsData()
+    .then((heads) => {
+      heads.data.forEach((customHead) => {
+        if (clickedHead === customHead.id) {
+          customWriteHeads(customHead);
+        }
+      });
+    });
+};
+
+const pickYourHead = () => {
+  $('#headBlock').on(('click'), (e) => {
+    const selectedHeads = $(e.target)
+      .closest('.dropdown-item')
+      .attr('type');
+    selectedHead(selectedHeads);
+  });
+};
+
+
 export default {
-  initializeLegoView, writeHeads, writeTorsos, writeLegs,
+  initializeLegoView, writeHeads, writeTorsos, writeLegs, pickYourHead,
 };

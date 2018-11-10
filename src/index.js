@@ -7,6 +7,7 @@ import anotherView from './components/SavedCharacters/savedCharacters';
 
 const initializeMainView = () => {
   legoView.initializeLegoView();
+  legoView.pickYourHead();
   otherView.displayHeads();
   otherView.displayTorsos();
   otherView.displayLegs();
