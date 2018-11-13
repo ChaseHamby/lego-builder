@@ -62,13 +62,17 @@ const initializeLegoView = () => {
   initializeLegView();
 };
 
+// Selecting Lego Parts //
+
+// Head //
+
 const customWriteHeads = (head) => {
   let newString = '';
   newString += `
       <div class="head" id="${head.id}"><img src="${head.imageUrl}"></div>
   `;
   $('#headCheese').html(newString);
-  $('#name').html(`<h3>${head.name}</h3>`);
+  $('#name').append(`<h3>${head.name}</h3>`);
 };
 
 const selectedHead = (clickedHead) => {
@@ -91,7 +95,68 @@ const pickYourHead = () => {
   });
 };
 
+// Torsos //
+
+const customWriteTorsos = (torso) => {
+  let newString = '';
+  newString += `
+    <div class="head" id="${torso.id}"><img src="${torso.imageUrl}"></div>
+`;
+  $('#torsoArea').html(newString);
+  $('#name').append(`<h3>${torso.name}</h3>`);
+};
+
+const selectedTorso = (clickedTorso) => {
+  partsView.getTorsoData()
+    .then((torsos) => {
+      torsos.data.forEach((customTorso) => {
+        if (clickedTorso === customTorso.id) {
+          customWriteTorsos(customTorso);
+        }
+      });
+    });
+};
+
+const pickYourTorso = () => {
+  $('#torsoBlock').on(('click'), (e) => {
+    const selectedTorsos = $(e.target)
+      .closest('.dropdown-item')
+      .attr('type');
+    selectedTorso(selectedTorsos);
+  });
+};
+
+// Legs //
+
+const customWriteLegs = (legs) => {
+  let newString = '';
+  newString += `
+      <div class="legs" id="${legs.id}"><img src="${legs.imageUrl}"></div>
+  `;
+  $('#legsArea').html(newString);
+  $('#name').append(`<h3>${legs.name}</h3>`);
+};
+
+const selectedLegz = (clickedLegs) => {
+  partsView.getLegsData()
+    .then((legs) => {
+      legs.data.forEach((customLegs) => {
+        if (clickedLegs === customLegs.id) {
+          customWriteLegs(customLegs);
+        }
+      });
+    });
+};
+
+const pickYourLegs = () => {
+  $('#legBlock').on(('click'), (e) => {
+    const selectedLegs = $(e.target)
+      .closest('.dropdown-item')
+      .attr('type');
+    selectedLegz(selectedLegs);
+  });
+};
 
 export default {
-  initializeLegoView, writeHeads, writeTorsos, writeLegs, pickYourHead,
+  initializeLegoView, writeHeads, writeTorsos, writeLegs, pickYourHead, pickYourTorso, pickYourLegs,
 };
